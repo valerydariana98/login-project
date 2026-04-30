@@ -126,7 +126,8 @@ Cada integrante trabaja en su propia rama:
 
 * `feature/register`
 * `feature/login`
-* `feature/auth-welcome`
+* `feature/welcome`
+* `feature/auth`
 * `chore/*` → configuración
 
 ---
