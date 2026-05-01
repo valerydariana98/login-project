@@ -6,10 +6,9 @@ Sistema de autenticación básico desarrollado en equipo para practicar Git y de
 
 ## Equipo
 
-* Valery
-* Camila
+* Valery 
+* Camila 
 * Ignacio
-
 ---
 
 ## Objetivo
@@ -20,6 +19,7 @@ Construir una aplicación web que permita:
 * Iniciar sesión
 * Mantener sesión activa
 * Mostrar información del usuario autenticado
+* Cerrar sesión
 
 ---
 
@@ -37,8 +37,6 @@ Encargado de:
 
 ### Backend (Firebase)
 
-Firebase
-
 Encargado de:
 
 * Autenticación de usuarios
@@ -53,6 +51,7 @@ Encargado de:
 2. Usuario inicia sesión → Firebase valida credenciales
 3. Usuario autenticado → se redirige a welcome
 4. Welcome muestra información del usuario
+5. Usuario puede ver sus datos o cerrar sesión
 
 ---
 
@@ -80,7 +79,7 @@ Encargado de:
 ```bash
 login-project/
 │
-├── login.html
+├── index.html            # Login
 ├── register.html
 ├── welcome.html
 │
@@ -88,8 +87,8 @@ login-project/
 │   └── style.css
 │
 ├── js/
-│   ├── firebase.js
-│   ├── auth.js
+│   ├── firebase.js      # Configuración Firebase
+│   ├── auth.js          # Funciones auth (login, register, logout)
 │   ├── login.js
 │   ├── register.js
 │   └── welcome.js
@@ -103,14 +102,42 @@ login-project/
 
 * Registro de usuarios
 * Inicio de sesión
-* Manejo de sesión
+* Persistencia de sesión
+* Visualización de datos del usuario
+* Cierre de sesión
 * Redirección entre páginas
-* Visualización del usuario autenticado
 
 ---
 
 ## Flujo de trabajo con Git
 
-* `main` → versión estable
-* `dev` → desarrollo
+### Ramas principales
 
+* `main` → versión estable
+* `dev` → desarrollo del proyecto
+
+---
+
+### Ramas de trabajo
+
+Cada integrante trabaja en su propia rama:
+
+* `feature/register`
+* `feature/login`
+* `feature/welcome`
+* `feature/auth`
+* `chore/*` → configuración
+
+---
+
+### Convención de commits
+
+Se utilizan prefijos para mantener orden:
+
+* `feat:` → nueva funcionalidad
+* `fix:` → corrección de errores
+* `style:` → cambios visuales
+* `refactor:` → mejora de código
+* `chore:` → configuración
+
+---
