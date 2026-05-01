@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register - EcoConnect</title>
+  <title>Register</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -18,27 +18,55 @@
 
         <div class="field">
           <label>Name</label>
-          <input type="text" placeholder="John" required>
+          <input 
+            name="name"
+            type="text"
+            placeholder="John"
+            pattern="[A-Za-z]+"
+            title="Only letters allowed"
+            required>
         </div>
 
         <div class="field">
           <label>Surname</label>
-          <input type="text" placeholder="Doe" required>
+          <input 
+            name="surname"
+            type="text"
+            placeholder="Doe"
+            pattern="[A-Za-z]+"
+            title="Only letters allowed"
+            required>
         </div>
 
         <div class="field">
           <label>Phone</label>
-          <input type="tel" placeholder="7XXXXXXX" pattern="7[0-9]{7}" required>
+          <input 
+            name="phone"
+            type="tel"
+            placeholder="7XXXXXXX"
+            pattern="[67][0-9]{7}"
+            title="Must start with 6 or 7 and have 8 digits"
+            required>
         </div>
 
         <div class="field">
           <label>Email</label>
-          <input type="email" placeholder="email@example.com" required>
+          <input 
+            name="email"
+            type="email"
+            placeholder="email@example.com"
+            required>
         </div>
 
         <div class="field">
           <label>Password</label>
-          <input type="password" placeholder="••••••••" minlength="8" required>
+          <input 
+            name="password"
+            type="password"
+            placeholder="••••••••"
+            minlength="8"
+            title="Minimum 8 characters"
+            required>
         </div>
 
         <button type="submit">Create Account</button>
