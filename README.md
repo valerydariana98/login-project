@@ -6,10 +6,16 @@ Sistema de autenticación básico desarrollado en equipo para practicar Git y de
 
 ## Equipo
 
+<<<<<<< feature/firebase-connection
 * Valery
 * Camila
 * Ignacio
 
+=======
+* Valery 
+* Camila 
+* Ignacio
+>>>>>>> dev
 ---
 
 ## Objetivo
@@ -20,6 +26,10 @@ Construir una aplicación web que permita:
 * Iniciar sesión
 * Mantener sesión activa
 * Mostrar información del usuario autenticado
+<<<<<<< feature/firebase-connection
+=======
+* Cerrar sesión
+>>>>>>> dev
 
 ---
 
@@ -37,8 +47,11 @@ Encargado de:
 
 ### Backend (Firebase)
 
+<<<<<<< feature/firebase-connection
 Firebase
 
+=======
+>>>>>>> dev
 Encargado de:
 
 * Autenticación de usuarios
@@ -53,6 +66,10 @@ Encargado de:
 2. Usuario inicia sesión → Firebase valida credenciales
 3. Usuario autenticado → se redirige a welcome
 4. Welcome muestra información del usuario
+<<<<<<< feature/firebase-connection
+=======
+5. Usuario puede ver sus datos o cerrar sesión
+>>>>>>> dev
 
 ---
 
@@ -80,7 +97,11 @@ Encargado de:
 ```bash
 login-project/
 │
+<<<<<<< feature/firebase-connection
 ├── login.html
+=======
+├── index.html            # Login
+>>>>>>> dev
 ├── register.html
 ├── welcome.html
 │
@@ -88,8 +109,13 @@ login-project/
 │   └── style.css
 │
 ├── js/
+<<<<<<< feature/firebase-connection
 │   ├── firebase.js
 │   ├── auth.js
+=======
+│   ├── firebase.js      # Configuración Firebase
+│   ├── auth.js          # Funciones auth (login, register, logout)
+>>>>>>> dev
 │   ├── login.js
 │   ├── register.js
 │   └── welcome.js
@@ -103,14 +129,54 @@ login-project/
 
 * Registro de usuarios
 * Inicio de sesión
+<<<<<<< feature/firebase-connection
 * Manejo de sesión
 * Redirección entre páginas
 * Visualización del usuario autenticado
+=======
+* Persistencia de sesión
+* Visualización de datos del usuario
+* Cierre de sesión
+* Redirección entre páginas
+>>>>>>> dev
 
 ---
 
 ## Flujo de trabajo con Git
 
+<<<<<<< feature/firebase-connection
 * `main` → versión estable
 * `dev` → desarrollo
 
+=======
+### Ramas principales
+
+* `main` → versión estable
+* `dev` → desarrollo del proyecto
+
+---
+
+### Ramas de trabajo
+
+Cada integrante trabaja en su propia rama:
+
+* `feature/register`
+* `feature/login`
+* `feature/welcome`
+* `feature/auth`
+* `chore/*` → configuración
+
+---
+
+### Convención de commits
+
+Se utilizan prefijos para mantener orden:
+
+* `feat:` → nueva funcionalidad
+* `fix:` → corrección de errores
+* `style:` → cambios visuales
+* `refactor:` → mejora de código
+* `chore:` → configuración
+
+---
+>>>>>>> dev
