@@ -6,10 +6,9 @@ Sistema de autenticación básico desarrollado en equipo para practicar Git y de
 
 ## Equipo
 
-* Valery 
-* Camila 
+* Valery
+* Camila
 * Ignacio
----
 
 ## Objetivo
 
@@ -103,9 +102,9 @@ login-project/
 * Registro de usuarios
 * Inicio de sesión
 * Persistencia de sesión
+* Redirección entre páginas
 * Visualización de datos del usuario
 * Cierre de sesión
-* Redirección entre páginas
 
 ---
 
