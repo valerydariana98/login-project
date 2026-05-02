@@ -1,7 +1,7 @@
 console.log("app.js cargado");
 
 import { db, auth } from "./firebase.js";
-import { register } from "./auth.js";
+import { register, logout } from "./auth.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
 
 import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
@@ -40,15 +40,7 @@ if (registerForm) {
     });
 }
 
-function getErrorMessage(code) {
-    const messages = {
-        "auth/email-already-in-use": "Ya existe una cuenta con ese correo.",
-        "auth/invalid-email": "El correo no es válido.",
-        "auth/weak-password": "La contraseña es muy débil (mínimo 6 caracteres).",
-        "auth/network-request-failed": "Error de red. Verifica tu conexión.",
-    };
-    return messages[code] || "Ocurrió un error. Intenta de nuevo.";
-}
+
 
 const userNameEl = document.getElementById("user-name");
 
@@ -65,4 +57,20 @@ if (userNameEl) {
     });
 }
 
+if (btnLogout) {
+    btnLogout.addEventListener("click", async () => {
+        await logout();
+        window.location.href = "index.html";
+    });
+}
 
+
+function getErrorMessage(code) {
+    const messages = {
+        "auth/email-already-in-use": "Ya existe una cuenta con ese correo.",
+        "auth/invalid-email": "El correo no es válido.",
+        "auth/weak-password": "La contraseña es muy débil (mínimo 6 caracteres).",
+        "auth/network-request-failed": "Error de red. Verifica tu conexión.",
+    };
+    return messages[code] || "Ocurrió un error. Intenta de nuevo.";
+}
