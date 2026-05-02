@@ -25,3 +25,8 @@ tailwind.config = {
         }
     }
 };
+// --- Elementos del DOM ---
+// Capturamos el formulario y los campos de entrada por sus IDs
+const loginForm = document.getElementById('login-form');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
