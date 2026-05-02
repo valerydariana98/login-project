@@ -3,7 +3,7 @@ console.log("app.js cargado");
 import { db } from "./firebase.js";
 import { register } from "./auth.js";
 
-import { doc, setDoc } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
 
 
 const registerForm = document.getElementById("registerForm");
@@ -49,6 +49,19 @@ function getErrorMessage(code) {
     return messages[code] || "Ocurrió un error. Intenta de nuevo.";
 }
 
+const userNameEl = document.getElementById("user-name");
 
+if (userNameEl) {
+    onAuthStateChanged(auth, async (user) => {
+        if (user) {
+            const docSnap = await getDoc(doc(db, "users", user.uid));
+            if (docSnap.exists()) {
+                userNameEl.textContent = docSnap.data().name;
+            }
+        } else {
+            window.location.href = "login.html";
+        }
+    });
+}
 
 
