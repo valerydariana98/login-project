@@ -1,7 +1,8 @@
 console.log("app.js cargado");
 
-import { db } from "./firebase.js";
+import { db, auth } from "./firebase.js";
 import { register } from "./auth.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
 
 import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
 
@@ -30,7 +31,7 @@ if (registerForm) {
                 createdAt: new Date()
             });
 
-            window.location.href = "index.html";
+            window.location.href = "welcome.html";
 
         } catch (error) {
             console.error(error);
@@ -59,7 +60,7 @@ if (userNameEl) {
                 userNameEl.textContent = docSnap.data().name;
             }
         } else {
-            window.location.href = "login.html";
+            window.location.href = "index.html";
         }
     });
 }
