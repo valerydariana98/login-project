@@ -48,6 +48,8 @@ loginForm.addEventListener('submit', async (e) => {
         
         // Si llegamos aquí, los datos son correctos
         console.log("Acceso concedido para:", userCredential.user.email);
+
+        window.location.href = "welcome.html";
         
     } catch (error) {
         // Si hay un error (contraseña mal, usuario no existe, etc.) cae aquí
