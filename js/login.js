@@ -54,6 +54,7 @@ loginForm.addEventListener('submit', async (e) => {
     } catch (error) {
         // Si hay un error (contraseña mal, usuario no existe, etc.) cae aquí
         console.error("Error detectado:", error.code);
+        alert("Credenciales incorrectas. Por favor, verifica tu correo y contraseña.");
     }
 });
 
