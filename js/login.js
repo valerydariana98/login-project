@@ -30,3 +30,15 @@ tailwind.config = {
 const loginForm = document.getElementById('login-form');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
+
+// --- Manejador de Eventos ---
+loginForm.addEventListener('submit', (e) => {
+    // Evita que la página se recargue (comportamiento por defecto del navegador)
+    e.preventDefault(); 
+    
+    // Obtenemos los valores actuales de los inputs
+    const email = emailInput.value;
+    const password = passwordInput.value;
+    
+    console.log("Datos capturados:", email, password);
+});
