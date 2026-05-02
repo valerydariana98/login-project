@@ -1,7 +1,7 @@
-import { auth } from "./firebase.js";
+console.log("app.js cargado");
+
 import { db } from "./firebase.js";
-import { login, register, logout } from "./auth.js";
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
+import { register } from "./auth.js";
 
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
 
@@ -30,7 +30,7 @@ if (registerForm) {
                 createdAt: new Date()
             });
 
-            window.location.hrf = "index.html";
+            window.location.href = "index.html";
 
         } catch (error) {
             console.error(error);
