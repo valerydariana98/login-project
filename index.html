@@ -2,16 +2,59 @@
 <html lang="en">
 
 <head>
-    <title></title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoConnect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            color: var(--muted);
+        }
+
+        .btn-outline {
+            background: none;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        button {
+            transition: background 0.2s, color 0.2s;
+        }
+    </style>
 </head>
 
 <body>
+    <main class="container">
+        <div class="card">
 
+            <div class="hero">
+                <h1>EcoConnect</h1>
+                <p>Start your journey today.</p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <button onclick="window.location.href='login.html'">Log in</button>
+                <button class="btn-outline" onclick="window.location.href='register.html'">Sign up</button>
+            </div>
+
+        </div>
+    </main>
 </body>
-<script type="module"></script>
 
 </html>
-

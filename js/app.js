@@ -1,9 +1,10 @@
 console.log("app.js cargado");
 
-import { db } from "./firebase.js";
-import { register } from "./auth.js";
+import { db, auth } from "./firebase.js";
+import { register, logout } from "./auth.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
 
-import { doc, setDoc } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
 
 
 const registerForm = document.getElementById("registerForm");
@@ -30,7 +31,7 @@ if (registerForm) {
                 createdAt: new Date()
             });
 
-            window.location.href = "index.html";
+            window.location.href = "welcome.html";
 
         } catch (error) {
             console.error(error);
@@ -38,6 +39,31 @@ if (registerForm) {
         }
     });
 }
+
+
+
+const userNameEl = document.getElementById("user-name");
+
+if (userNameEl) {
+    onAuthStateChanged(auth, async (user) => {
+        if (user) {
+            const docSnap = await getDoc(doc(db, "users", user.uid));
+            if (docSnap.exists()) {
+                userNameEl.textContent = docSnap.data().name;
+            }
+        } else {
+            window.location.href = "index.html";
+        }
+    });
+}
+const btnLogout = document.getElementById("btn-logout");
+if (btnLogout) {
+    btnLogout.addEventListener("click", async () => {
+        await logout();
+        window.location.href = "index.html";
+    });
+}
+
 
 function getErrorMessage(code) {
     const messages = {
@@ -48,7 +74,3 @@ function getErrorMessage(code) {
     };
     return messages[code] || "Ocurrió un error. Intenta de nuevo.";
 }
-
-
-
-
