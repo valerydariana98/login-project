@@ -1,86 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <main class="container">
-    <div class="card">
-      
-      <h2>Create Account</h2>
-      <p class="subtitle">Join EcoConnect and start your journey.</p>
+    <main class="container">
+        <div class="card">
 
-      <form id="registerForm">
+            <h2>Create Account</h2>
+            <p class="subtitle">Join EcoConnect and start your journey.</p>
 
-        <div class="field">
-          <label>Name</label>
-          <input 
-            name="name"
-            type="text"
-            placeholder="John"
-            pattern="[A-Za-z]+"
-            title="Only letters allowed"
-            required>
+            <form id="registerForm">
+
+                <div class="field">
+                    <label>Name</label>
+                    <input name="name" type="text" placeholder="John" pattern="[A-Za-z]+" title="Only letters allowed"
+                        required>
+                </div>
+
+                <div class="field">
+                    <label>Surname</label>
+                    <input name="surname" type="text" placeholder="Doe" pattern="[A-Za-z]+" title="Only letters allowed"
+                        required>
+                </div>
+
+                <div class="field">
+                    <label>Phone</label>
+                    <input name="phone" type="tel" placeholder="7XXXXXXX" pattern="[67][0-9]{7}"
+                        title="Must start with 6 or 7 and have 8 digits" required>
+                </div>
+
+                <div class="field">
+                    <label>Email</label>
+                    <input name="email" type="email" placeholder="email@example.com" required>
+                </div>
+
+                <div class="field">
+                    <label>Password</label>
+                    <input name="password" type="password" placeholder="••••••••" minlength="8"
+                        title="Minimum 8 characters" required>
+                </div>
+
+                <button type="submit">Create Account</button>
+
+            </form>
+
+            <p class="footer-text">
+                Already have an account?
+                <a href="index.html">Log in</a>
+            </p>
+
         </div>
+    </main>
 
-        <div class="field">
-          <label>Surname</label>
-          <input 
-            name="surname"
-            type="text"
-            placeholder="Doe"
-            pattern="[A-Za-z]+"
-            title="Only letters allowed"
-            required>
-        </div>
-
-        <div class="field">
-          <label>Phone</label>
-          <input 
-            name="phone"
-            type="tel"
-            placeholder="7XXXXXXX"
-            pattern="[67][0-9]{7}"
-            title="Must start with 6 or 7 and have 8 digits"
-            required>
-        </div>
-
-        <div class="field">
-          <label>Email</label>
-          <input 
-            name="email"
-            type="email"
-            placeholder="email@example.com"
-            required>
-        </div>
-
-        <div class="field">
-          <label>Password</label>
-          <input 
-            name="password"
-            type="password"
-            placeholder="••••••••"
-            minlength="8"
-            title="Minimum 8 characters"
-            required>
-        </div>
-
-        <button type="submit">Create Account</button>
-
-      </form>
-
-      <p class="footer-text">
-        Already have an account?
-        <a href="index.html">Log in</a>
-      </p>
-
-    </div>
-  </main>
-
-  <script src="js/register.js"></script>
+    <script src="js/register.js"></script>
 </body>
+
 </html>
