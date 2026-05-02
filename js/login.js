@@ -1,4 +1,7 @@
-// Configuración del tema de Tailwind para la vista de Login
+
+// Importamos la instancia de autenticación configurada y la función oficial de Firebase
+import { auth } from './firebase.js';
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";// Configuración del tema de Tailwind para la vista de Login
 tailwind.config = {
     darkMode: "class",
     theme: {
@@ -31,14 +34,24 @@ const loginForm = document.getElementById('login-form');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 
-// --- Manejador de Eventos ---
-loginForm.addEventListener('submit', (e) => {
-    // Evita que la página se recargue (comportamiento por defecto del navegador)
+// Agregamos la palabra clave 'async' antes de los parámetros
+loginForm.addEventListener('submit', async (e) => {
     e.preventDefault(); 
     
-    // Obtenemos los valores actuales de los inputs
     const email = emailInput.value;
     const password = passwordInput.value;
     
-    console.log("Datos capturados:", email, password);
+    // El bloque try/catch es fundamental para manejar el éxito o el error de la conexión
+    try {
+        // Llamada asíncrona a Firebase Auth
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        
+        // Si llegamos aquí, los datos son correctos
+        console.log("Acceso concedido para:", userCredential.user.email);
+        
+    } catch (error) {
+        // Si hay un error (contraseña mal, usuario no existe, etc.) cae aquí
+        console.error("Error detectado:", error.code);
+    }
 });
+
