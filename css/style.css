@@ -124,3 +124,26 @@ a {
 .btn-logout:hover {
     background: var(--background);
 }
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button, input {
+    transition: all 0.2s ease;
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
