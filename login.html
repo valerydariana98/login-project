@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <main class="container">
+            <div class="card">
+
+                <h2>Log In</h2>
+                <p class="subtitle">Welcome back to EcoConnect.</p>
+
+                <form id="loginForm">
+
+                    <div class="field">
+                        <label>Email</label>
+                        <input name="email" type="email" placeholder="email@example.com" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Password</label>
+                        <input name="password" type="password" placeholder="••••••••" minlength="8"
+                            title="Minimum 8 characters" required>
+                    </div>
+
+                    <button type="submit">Log In</button>
+
+                </form>
+
+                <p class="footer-text">
+                    Don't have an account?
+                    <a href="register.html">Sign up</a>
+                </p>
+
+            </div>
+        </main>
+
+        <script type="module" src="js/login.js"></script>
+    </body>
+
+</html>
