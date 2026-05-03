@@ -3,7 +3,6 @@ console.log("app.js cargado");
 import { db, auth } from "./firebase.js";
 import { register, logout } from "./auth.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
-
 import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
 
 
@@ -16,7 +15,7 @@ if (registerForm) {
         const name = registerForm.name.value.trim();
         const surname = registerForm.surname.value.trim();
         const phone = registerForm.phone.value.trim();
-        const email = registerForm.email.value.trim();
+        const email = registerForm.email.value.trim().toLowerCase(); 
         const password = registerForm.password.value;
 
         try {
@@ -30,6 +29,8 @@ if (registerForm) {
                 email,
                 createdAt: new Date()
             });
+
+            registerForm.reset(); 
 
             window.location.href = "welcome.html";
 
@@ -56,7 +57,9 @@ if (userNameEl) {
         }
     });
 }
+
 const btnLogout = document.getElementById("btn-logout");
+
 if (btnLogout) {
     btnLogout.addEventListener("click", async () => {
         await logout();
